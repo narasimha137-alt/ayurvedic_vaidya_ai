@@ -1,8 +1,7 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 
 # PyTorch CPU build (smaller download, sufficient for inference)
-torch==2.2.0+cpu
-
+torch>=2.8.0
 # Web framework
 fastapi
 uvicorn[standard]
