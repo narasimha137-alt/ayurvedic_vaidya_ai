@@ -1,12 +1,32 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.12.0+cpu
+
+# PyTorch CPU build (smaller download, sufficient for inference)
+torch==2.2.0+cpu
+
+# Web framework
 fastapi
-uvicorn
-sentence-transformers
+uvicorn[standard]
+
+# NLP / embeddings
+sentence-transformers>=2.7.0   # bi-encoder + cross-encoder
+rank-bm25                      # BM25 keyword index
+
+# Vector search
 faiss-cpu
-pymupdf
+
+# PDF parsing
+pymupdf                        # fitz
+
+# Data
 numpy
-requests
-python-multipart
+
+# API / env
 openai
 python-dotenv
+httpx                          # async HTTP used internally by openai sdk
+
+# FastAPI extras
+python-multipart               # file uploads
+
+# Optional – better sentence splitting (install if network available)
+# nltk
